@@ -51,7 +51,12 @@ The database is accessible within the cluster. This means that when you will hav
 ```bash
 kubectl port-forward --namespace default svc/<SERVICE_NAME>-postgresql 5432:5432 &
     PGPASSWORD="$POSTGRES_PASSWORD" psql --host 127.0.0.1 -U postgres -d postgres -p 5432
+
+kubectl port-forward --namespace default svc/postgresql-db 5432:5432 &
+    PGPASSWORD="$POSTGRES_PASSWORD" psql --host 127.0.0.1 -U postgres -d postgres -p 5432
 ```
+
+
 
 * Connecting Via a Pod
 ```bash
