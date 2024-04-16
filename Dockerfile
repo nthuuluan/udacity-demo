@@ -17,6 +17,5 @@ COPY ./analytics/requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 COPY ./analytics .
-
 # Start the database and Flask application
 CMD python app.py
